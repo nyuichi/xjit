@@ -27,7 +27,7 @@ void xjit_destroy(xJIT *);
 #define xjit_rcx (xjit_rcx_())
 #define xjit_rdx (xjit_rdx_())
 #define xjit_rsp (xjit_rsp_())
-#define xjit_rdp (xjit_rdp_())
+#define xjit_rbp (xjit_rbp_())
 #define xjit_rsi (xjit_rsi_())
 #define xjit_rdi (xjit_rdi_())
 
