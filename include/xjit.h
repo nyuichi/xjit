@@ -110,10 +110,10 @@ void xjit_jz(xJIT *, const void *);
 /* private interfaces */
 
 #define xjit_addr_mode(_1,_2,_3,_4,name,...) name
-xOperand *xjit_b(const xReg *base);
-xOperand *xjit_bd(const xReg *base, uint32_t disp);
-xOperand *xjit_bdx(const xReg *base, uint32_t disp, const xReg *index);
-xOperand *xjit_bdxs(const xReg *base, uint32_t disp, const xReg *index, uint8_t scale);
+xOperand *xjit_b(const xOperand *base);
+xOperand *xjit_bd(const xOperand *base, uint32_t disp);
+xOperand *xjit_bdx(const xOperand *base, uint32_t disp, const xOperand *index);
+xOperand *xjit_bdxs(const xOperand *base, uint32_t disp, const xOperand *index, uint8_t scale);
 
 xOperand *xjit_rax_(void);
 xOperand *xjit_rbx_(void);
