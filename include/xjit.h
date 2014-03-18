@@ -108,12 +108,12 @@ void xjit_jz(xJIT *, const void *, uint8_t);
 # define mov(op1,op2) xjit_mov(xjit,op1,op2)
 # define call(op,type) xjit_call(xjit,op,type)
 # define ret() xjit_ret(xjit)
-# define inc xjit_inc
-# define dec xjit_dec
+# define inc(op) xjit_inc(xjit,op)
+# define dec(op) xjit_dec(xjit,op)
 # define add(op1,op2) xjit_add(xjit,op1,op2)
 # define addi(op,imm) xjit_addi(xjit,op,imm)
-# define sub xjit_sub
-# define subi xjit_subi
+# define sub(op1,op2) xjit_sub(xjit,op1,op2)
+# define subi(op,imm) xjit_subi(xjit,op,imm)
 # define test(op1,op2) xjit_test(xjit,op1,op2)
 # define testi(op,imm) xjit_testi(xjit,op,imm)
 # define jmp(op,type) xjit_jmp(xjit,op,type)
