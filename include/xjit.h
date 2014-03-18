@@ -80,12 +80,6 @@ void xjit_jz(xJIT *, const void *);
 # define rbp xjit_rbp
 # define rsi xjit_rsi
 # define rdi xjit_rdi
-
-# define push xjit_push
-# define pop xjit_pop
-# define mov xjit_mov
-# define call xjit_call
-# define ret xjit_ret
 # define r8 xjit_r8
 # define r9 xjit_r9
 # define r10 xjit_r10
@@ -95,10 +89,15 @@ void xjit_jz(xJIT *, const void *);
 # define r14 xjit_r14
 # define r15 xjit_r15
 
+# define push(op) xjit_push(xjit,op)
+# define pop(op) xjit_pop(xjit,op)
+# define mov(op1,op2) xjit_mov(xjit,op1,op2)
+# define call(op,kind) xjit_call(xjit,op,kind)
+# define ret() xjit_ret(xjit)
 # define inc xjit_inc
 # define dec xjit_dec
-# define add xjit_add
-# define addi xjit_addi
+# define add(op1,op2) xjit_add(xjit,op1,op2)
+# define addi(op,imm) xjit_addi(xjit,op,imm)
 # define sub xjit_sub
 # define subi xjit_subi
 # define test xjit_test
