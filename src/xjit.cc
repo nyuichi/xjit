@@ -59,6 +59,14 @@ xOperand *xjit_rsp_(void) { return new xOperand(Xbyak::util::rsp); }
 xOperand *xjit_rbp_(void) { return new xOperand(Xbyak::util::rbp); }
 xOperand *xjit_rsi_(void) { return new xOperand(Xbyak::util::rsi); }
 xOperand *xjit_rdi_(void) { return new xOperand(Xbyak::util::rdi); }
+xOperand *xjit_r8_(void) { return new xOperand(Xbyak::util::r8); }
+xOperand *xjit_r9_(void) { return new xOperand(Xbyak::util::r9); }
+xOperand *xjit_r10_(void) { return new xOperand(Xbyak::util::r10); }
+xOperand *xjit_r11_(void) { return new xOperand(Xbyak::util::r11); }
+xOperand *xjit_r12_(void) { return new xOperand(Xbyak::util::r12); }
+xOperand *xjit_r13_(void) { return new xOperand(Xbyak::util::r13); }
+xOperand *xjit_r14_(void) { return new xOperand(Xbyak::util::r14); }
+xOperand *xjit_r15_(void) { return new xOperand(Xbyak::util::r15); }
 
 void xjit_push(xJIT *xjit, const xOperand *op) { xjit->codegen->push(op->op); }
 void xjit_pop(xJIT *xjit, const xOperand *op) { xjit->codegen->pop(op->op); }

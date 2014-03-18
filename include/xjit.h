@@ -30,6 +30,14 @@ void xjit_destroy(xJIT *);
 #define xjit_rbp (xjit_rbp_())
 #define xjit_rsi (xjit_rsi_())
 #define xjit_rdi (xjit_rdi_())
+#define xjit_r8 (xjit_r8_())
+#define xjit_r9 (xjit_r9_())
+#define xjit_r10 (xjit_r10_())
+#define xjit_r11 (xjit_r11_())
+#define xjit_r12 (xjit_r12_())
+#define xjit_r13 (xjit_r13_())
+#define xjit_r14 (xjit_r14_())
+#define xjit_r15 (xjit_r15_())
 
 enum {
   XJIT_CALL_ABS,
@@ -77,6 +85,15 @@ void xjit_jz(xJIT *, const void *);
 # define mov xjit_mov
 # define call xjit_call
 # define ret xjit_ret
+# define r8 xjit_r8
+# define r9 xjit_r9
+# define r10 xjit_r10
+# define r11 xjit_r11
+# define r12 xjit_r12
+# define r13 xjit_r13
+# define r14 xjit_r14
+# define r15 xjit_r15
+
 # define inc xjit_inc
 # define dec xjit_dec
 # define add xjit_add
@@ -106,6 +123,14 @@ xOperand *xjit_rsp_(void);
 xOperand *xjit_rbp_(void);
 xOperand *xjit_rsi_(void);
 xOperand *xjit_rdi_(void);
+xOperand *xjit_r8_(void);
+xOperand *xjit_r9_(void);
+xOperand *xjit_r10_(void);
+xOperand *xjit_r11_(void);
+xOperand *xjit_r12_(void);
+xOperand *xjit_r13_(void);
+xOperand *xjit_r14_(void);
+xOperand *xjit_r15_(void);
 
 #if defined(__cplusplus)
 }
