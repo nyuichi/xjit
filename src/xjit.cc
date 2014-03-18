@@ -25,7 +25,7 @@ xjit_new()
   xJIT *xjit;
 
   xjit = new xJIT;
-  xjit->codegen = new Xbyak::CodeGenerator(100);
+  xjit->codegen = new Xbyak::CodeGenerator(100, Xbyak::AutoGrow);
   return xjit;
 }
 
