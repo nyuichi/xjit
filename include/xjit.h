@@ -20,6 +20,8 @@ void xjit_ready(xJIT *);
 const void *xjit_getcode(xJIT *);
 void xjit_destroy(xJIT *);
 
+void xjit_label(xJIT *, const char *);
+
 #define xjit_ptr(...) xjit_addr_mode(__VA_ARGS__, xjit_bdxs, xjit_bdx, xjit_bd, xjit_b)(__VA_ARGS__)
 #define xjit_dword(...) xjit_addr_mode32(__VA_ARGS__, xjit_bdxs32, xjit_bdx32, xjit_bd32, xjit_b32)(__VA_ARGS__)
 
@@ -72,6 +74,8 @@ void xjit_jz(xJIT *, const void *);
 /* alias */
 
 #if defined(XJIT_ALIAS)
+
+# define L(label) xjit_label(xjit,label)
 
 # define ptr xjit_ptr
 # define dword xjit_dword

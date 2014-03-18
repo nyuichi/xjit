@@ -47,6 +47,12 @@ xjit_destroy(xJIT *xjit)
   delete xjit->codegen;
 }
 
+void
+xjit_label(xJIT *xjit, const char *label)
+{
+  xjit->codegen->L(label);
+}
+
 xOperand *xjit_b(const xOperand *base) { return new xOperand(Xbyak::util::ptr[static_cast<const Xbyak::Reg&>(base->op)]); }
 xOperand *xjit_bd(const xOperand *base, uint32_t disp) { return new xOperand(Xbyak::util::ptr[static_cast<const Xbyak::Reg&>(base->op) + disp]); }
 xOperand *xjit_bdx(const xOperand *base, uint32_t disp, const xOperand *index) { return new xOperand(Xbyak::util::ptr[static_cast<const Xbyak::Reg&>(base->op) + static_cast<const Xbyak::Reg&>(index->op) + disp]); }
