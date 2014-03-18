@@ -40,6 +40,7 @@ void xjit_destroy(xJIT *);
 #define xjit_r15 (xjit_r15_())
 
 enum {
+  XJIT_CALL_OPERAND,
   XJIT_CALL_ABS,
   XJIT_CALL_LABEL
 };

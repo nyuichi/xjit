@@ -74,6 +74,8 @@ void xjit_pop(xJIT *xjit, const xOperand *op) { xjit->codegen->pop(op->op); }
 void xjit_mov(xJIT *xjit, const xOperand *op1, const xOperand *op2) { xjit->codegen->mov(op1->op, op2->op); }
 void xjit_call(xJIT *xjit, const void *op, uint8_t mode) {
   switch (mode) {
+  case XJIT_CALL_OPERAND:
+    xjit->codegen->call(static_cast<const xOperand *>(op)->op);
   case XJIT_CALL_LABEL:
     xjit->codegen->call(static_cast<const char *>(op));
     break;
