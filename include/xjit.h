@@ -68,7 +68,7 @@ void xjit_jz(xJIT *, const void *);
 
 /* alias */
 
-#if XJIT_ALIAS
+#if defined(XJIT_ALIAS)
 
 # define ptr xjit_ptr
 
