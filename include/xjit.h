@@ -21,6 +21,7 @@ const void *xjit_getcode(xJIT *);
 void xjit_destroy(xJIT *);
 
 #define xjit_ptr(...) xjit_addr_mode(__VA_ARGS__, xjit_bdxs, xjit_bdx, xjit_bd, xjit_b)(__VA_ARGS__)
+#define xjit_dword(...) xjit_addr_mode32(__VA_ARGS__, xjit_bdxs32, xjit_bdx32, xjit_bd32, xjit_b32)(__VA_ARGS__)
 
 #define xjit_eax (xjit_eax_())
 
@@ -73,6 +74,7 @@ void xjit_jz(xJIT *, const void *);
 #if defined(XJIT_ALIAS)
 
 # define ptr xjit_ptr
+# define dword xjit_dword
 
 # define eax xjit_eax
 # define rax xjit_rax
@@ -117,6 +119,11 @@ xOperand *xjit_b(const xOperand *base);
 xOperand *xjit_bd(const xOperand *base, uint32_t disp);
 xOperand *xjit_bdx(const xOperand *base, uint32_t disp, const xOperand *index);
 xOperand *xjit_bdxs(const xOperand *base, uint32_t disp, const xOperand *index, uint8_t scale);
+#define xjit_addr_mode32(_1,_2,_3,_4,name,...) name
+xOperand *xjit_b32(const xOperand *base);
+xOperand *xjit_bd32(const xOperand *base, uint32_t disp);
+xOperand *xjit_bdx32(const xOperand *base, uint32_t disp, const xOperand *index);
+xOperand *xjit_bdxs32(const xOperand *base, uint32_t disp, const xOperand *index, uint8_t scale);
 
 xOperand *xjit_eax_(void);
 

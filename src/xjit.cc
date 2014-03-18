@@ -52,6 +52,11 @@ xOperand *xjit_bd(const xOperand *base, uint32_t disp) { return new xOperand(Xby
 xOperand *xjit_bdx(const xOperand *base, uint32_t disp, const xOperand *index) { return new xOperand(Xbyak::util::ptr[static_cast<const Xbyak::Reg&>(base->op) + static_cast<const Xbyak::Reg&>(index->op) + disp]); }
 xOperand *xjit_bdxs(const xOperand *base, uint32_t disp, const xOperand *index, uint8_t scale) { return new xOperand(Xbyak::util::ptr[static_cast<const Xbyak::Reg&>(base->op) + static_cast<const Xbyak::Reg&>(index->op) * scale + disp]); }
 
+xOperand *xjit_b32(const xOperand *base) { return new xOperand(Xbyak::util::dword[static_cast<const Xbyak::Reg&>(base->op)]); }
+xOperand *xjit_bd32(const xOperand *base, uint32_t disp) { return new xOperand(Xbyak::util::dword[static_cast<const Xbyak::Reg&>(base->op) + disp]); }
+xOperand *xjit_bdx32(const xOperand *base, uint32_t disp, const xOperand *index) { return new xOperand(Xbyak::util::dword[static_cast<const Xbyak::Reg&>(base->op) + static_cast<const Xbyak::Reg&>(index->op) + disp]); }
+xOperand *xjit_bdxs32(const xOperand *base, uint32_t disp, const xOperand *index, uint8_t scale) { return new xOperand(Xbyak::util::dword[static_cast<const Xbyak::Reg&>(base->op) + static_cast<const Xbyak::Reg&>(index->op) * scale + disp]); }
+
 xOperand *xjit_eax_(void) { return new xOperand(Xbyak::util::eax); }
 xOperand *xjit_rax_(void) { return new xOperand(Xbyak::util::rax); }
 xOperand *xjit_rbx_(void) { return new xOperand(Xbyak::util::rbx); }
