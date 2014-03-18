@@ -51,6 +51,11 @@ enum {
 };
 
 enum {
+  XJIT_LABEL_NEAR,
+  XJIT_LABEL_AUTO
+};
+
+enum {
   XJIT_JMP_ABS,
   XJIT_JMP_LABEL
 };
@@ -69,7 +74,7 @@ void xjit_subi(xJIT *, const xOperand *, uint32_t);
 void xjit_test(xJIT *, const xOperand *, const xOperand *);
 void xjit_testi(xJIT *, const xOperand *, uint32_t);
 void xjit_jmp(xJIT *, const void *, uint8_t);
-void xjit_jz(xJIT *, const void *);
+void xjit_jz(xJIT *, const void *, uint8_t);
 
 /* alias */
 
@@ -112,7 +117,7 @@ void xjit_jz(xJIT *, const void *);
 # define test(op1,op2) xjit_test(xjit,op1,op2)
 # define testi(op,imm) xjit_testi(xjit,op,imm)
 # define jmp(op,type) xjit_jmp(xjit,op,type)
-# define jz(op) xjit_jz(xjit,op)
+# define jz(op,type) xjit_jz(xjit,op,type)
 
 #endif
 

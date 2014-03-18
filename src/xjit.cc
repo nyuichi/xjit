@@ -115,7 +115,16 @@ void xjit_jmp(xJIT *xjit, const void *op, uint8_t mode) {
     break;
   }
 }
-void xjit_jz(xJIT *xjit, const void *op) { xjit->codegen->jz(static_cast<const char *>(op)); }
+void xjit_jz(xJIT *xjit, const void *op, uint8_t mode) {
+  switch (mode) {
+  case XJIT_LABEL_AUTO:
+    xjit->codegen->jz(static_cast<const char *>(op), Xbyak::CodeGenerator::T_AUTO);
+    break;
+  case XJIT_LABEL_NEAR:
+    xjit->codegen->jz(static_cast<const char *>(op), Xbyak::CodeGenerator::T_NEAR);
+    break;
+  }
+}
 
 }
 
