@@ -92,7 +92,7 @@ void xjit_add(xJIT *xjit, const xOperand *op1, const xOperand *op2) { xjit->code
 void xjit_addi(xJIT *xjit, const xOperand *op, uint32_t imm) { xjit->codegen->add(op->op, imm); }
 void xjit_sub(xJIT *xjit, const xOperand *op1, const xOperand *op2) { xjit->codegen->sub(op1->op, op2->op); }
 void xjit_subi(xJIT *xjit, const xOperand *op, uint32_t imm) { xjit->codegen->sub(op->op, imm); }
-void xjit_test(xJIT *xjit, const xOperand *op, const xReg *reg) { xjit->codegen->test(op->op, reg->reg); }
+void xjit_test(xJIT *xjit, const xOperand *op1, const xOperand *op2) { xjit->codegen->test(op1->op, *static_cast<const Xbyak::Reg*>(&op2->op)); }
 void xjit_testi(xJIT *xjit, const xOperand *op, uint32_t imm) { xjit->codegen->test(op->op, imm); }
 void xjit_jmp(xJIT *xjit, const void *op, uint8_t mode) {
   switch (mode) {

@@ -63,7 +63,7 @@ void xjit_add(xJIT *, const xOperand *, const xOperand *);
 void xjit_addi(xJIT *, const xOperand *, uint32_t);
 void xjit_sub(xJIT *, const xOperand *, const xOperand *);
 void xjit_subi(xJIT *, const xOperand *, uint32_t);
-void xjit_test(xJIT *, const xOperand *, const xReg *);
+void xjit_test(xJIT *, const xOperand *, const xOperand *);
 void xjit_testi(xJIT *, const xOperand *, uint32_t);
 void xjit_jmp(xJIT *, const void *, uint8_t);
 void xjit_jz(xJIT *, const void *);
