@@ -20,7 +20,7 @@ void xjit_ready(xJIT *);
 const void *xjit_getcode(xJIT *);
 void xjit_destroy(xJIT *);
 
-#define xjit_ptr(...) xjit_addr_mode(__VA_ARGS__, xjit_bdxs, xjit_dbx, xjit_db, xjit_d)(__VA_ARGS__)
+#define xjit_ptr(...) xjit_addr_mode(__VA_ARGS__, xjit_bdxs, xjit_bdx, xjit_bd, xjit_b)(__VA_ARGS__)
 
 #define xjit_rax (xjit_rax_())
 #define xjit_rbx (xjit_rbx_())
