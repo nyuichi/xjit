@@ -101,7 +101,7 @@ void xjit_jz(xJIT *, const void *);
 # define push(op) xjit_push(xjit,op)
 # define pop(op) xjit_pop(xjit,op)
 # define mov(op1,op2) xjit_mov(xjit,op1,op2)
-# define call(op,kind) xjit_call(xjit,op,kind)
+# define call(op,type) xjit_call(xjit,op,type)
 # define ret() xjit_ret(xjit)
 # define inc xjit_inc
 # define dec xjit_dec
@@ -109,10 +109,10 @@ void xjit_jz(xJIT *, const void *);
 # define addi(op,imm) xjit_addi(xjit,op,imm)
 # define sub xjit_sub
 # define subi xjit_subi
-# define test xjit_test
-# define testi xjit_testi
-# define jmp xjit_jmp
-# define jz xjit_jz
+# define test(op1,op2) xjit_test(xjit,op1,op2)
+# define testi(op,imm) xjit_testi(xjit,op,imm)
+# define jmp(op,type) xjit_jmp(xjit,op,type)
+# define jz(op) xjit_jz(xjit,op)
 
 #endif
 
