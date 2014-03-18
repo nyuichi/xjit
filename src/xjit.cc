@@ -18,10 +18,14 @@ struct xReg {
   Xbyak::Reg reg;
 };
 
-void
-xjit_init(xJIT *xjit)
+xJIT *
+xjit_new()
 {
+  xJIT *xjit;
+
+  xjit = new xJIT;
   xjit->codegen = new Xbyak::CodeGenerator(100);
+  return xjit;
 }
 
 void

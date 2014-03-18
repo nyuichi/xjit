@@ -15,7 +15,7 @@ typedef struct xJIT xJIT;
 typedef struct xOperand xOperand;
 typedef struct xReg xReg;
 
-void xjit_init(xJIT *);
+xJIT *xjit_new();
 void xjit_ready(xJIT *);
 const void *xjit_getcode(xJIT *);
 void xjit_destroy(xJIT *);
