@@ -94,6 +94,8 @@ void xjit_call(xJIT *xjit, const void *op, uint8_t mode) {
   case XJIT_CALL_ABS:
     xjit->codegen->call(op);
     break;
+  default:
+    throw "unknown call type";
   }
 }
 void xjit_ret(xJIT *xjit) { xjit->codegen->ret(); }
@@ -113,6 +115,8 @@ void xjit_jmp(xJIT *xjit, const void *op, uint8_t mode) {
   case XJIT_JMP_ABS:
     xjit->codegen->jmp(op);
     break;
+  default:
+    throw "unknown jmp type";
   }
 }
 void xjit_jz(xJIT *xjit, const void *op, uint8_t mode) {
@@ -123,6 +127,8 @@ void xjit_jz(xJIT *xjit, const void *op, uint8_t mode) {
   case XJIT_LABEL_NEAR:
     xjit->codegen->jz(static_cast<const char *>(op), Xbyak::CodeGenerator::T_NEAR);
     break;
+  default:
+    throw "unknown jz type";
   }
 }
 
