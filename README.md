@@ -6,6 +6,8 @@ xJIT is a C99 wrapper for Xbyak the JIT assember.
 
 - TODO
 
+See `etc/brainfuck.c` for example.
+
 # Author
 
 Yuichi Nishiwaki (yuichi@idylls.jp)
