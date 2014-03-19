@@ -110,7 +110,7 @@ void xjit_testi(xJIT *xjit, const xOperand *op, uint32_t imm) { xjit->codegen->t
 void xjit_jmp(xJIT *xjit, const void *op, uint8_t mode) {
   switch (mode) {
   case XJIT_JMP_LABEL:
-    xjit->codegen->jmp(static_cast<const char *>(op));
+    xjit->codegen->jmp(std::string(static_cast<const char *>(op)));
     break;
   case XJIT_JMP_ABS:
     xjit->codegen->jmp(op);
