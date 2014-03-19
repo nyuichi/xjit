@@ -88,6 +88,7 @@ void xjit_call(xJIT *xjit, const void *op, uint8_t mode) {
   switch (mode) {
   case XJIT_CALL_OPERAND:
     xjit->codegen->call(static_cast<const xOperand *>(op)->op);
+    break;
   case XJIT_CALL_LABEL:
     xjit->codegen->call(static_cast<const char *>(op));
     break;
